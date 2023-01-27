@@ -1,0 +1,17 @@
+#searchBarContainer {
+    width: 500px;
+    margin: 0 auto;
+    background-color: grey;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+#searchbar {
+    width: 450px;
+    outline: none;
+    border: 0px;
+    height: 30px;
+}

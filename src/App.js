@@ -1,23 +1,56 @@
-import logo from './logo.svg';
+import { useEffect, useState } from 'react';
 import './App.css';
+import Button from './components/button';
+import Products from './components/products';
+import Search from './components/search';
+import { product, productCat } from "./components/data"
 
 function App() {
+  const [data, setData] = useState(product);
+  const [checked, setChecked] = useState(false);
+
+  // useEffect(() => {
+  //   if (checked) {
+  //     let newArr1 = [];
+  //     product.map(e => {
+  //       if (e.isStock) {
+  //         setData(newArr1)
+  //       }
+  //     })
+  //   } else {
+  //     setData(product)
+  //   }
+  // }, [])
+  function OnlyProductsInStock() {
+    setChecked(!checked)
+    if (checked) {
+      let newArr1 = [];
+      product.map(e => {
+        if (e.isStock) {
+          newArr1.push(e)
+          setData(newArr1)
+        }
+      })
+    } else {
+      setData(product)
+    }
+  }
+
+  function search(para) {
+    let newArr = [];
+    product.map(e => {
+      if (e.name.includes(para)) {
+        newArr.push(e)
+      }
+      setData(newArr)
+    })
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div id='container'>
+      <Search search={search} />
+      <Button setChecked={setChecked} checked={checked} OnlyProductsInStock={OnlyProductsInStock} />
+      <Products setData={setData} data={data} productCat={productCat} />
     </div>
   );
 }

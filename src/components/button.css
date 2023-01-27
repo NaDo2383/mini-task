@@ -1,0 +1,56 @@
+.container {
+    position: relative;
+    width: 60px;
+    height: 20px;
+    border-radius: 50px;
+    display: inline-block;
+    border: 2px solid black;
+}
+
+.slider {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: 1s;
+    border-radius: 50px;
+    background-color: aliceblue;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 16px;
+    left: 0px;
+    border-radius: 50px;
+    /* box-shadow: 2px 2px grey; */
+    border: 1px solid grey;
+    background-color: white;
+    transition-property: all;
+    transition-duration: 0.5s;
+    transition-delay: 0s;
+}
+
+#button {
+    display: none;
+    position: absolute;
+    top: 200px;
+}
+
+#button:checked+.slider {
+    background-color: rgb(17, 223, 79);
+}
+
+#button:checked+.slider:before {
+    left: 42px;
+}
+
+#toggleContainer {
+    display: flex;
+    gap: 20px;
+    width: 500px;
+    margin: 0 auto;
+}

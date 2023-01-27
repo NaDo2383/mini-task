@@ -1,0 +1,42 @@
+.productCatHeader {
+    font-size: 30px;
+    text-transform: uppercase;
+}
+
+.productCatHeader {
+    display: flex;
+    row-gap: 20px;
+}
+
+.productDetail {
+    display: flex;
+    justify-content: space-between;
+    max-width: 500px;
+    padding-left: 10%;
+}
+
+#productContainer {
+    margin: 0 auto;
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+}
+
+.productName {
+    width: 150px;
+}
+
+.productDetailContainer {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+
+.g {
+    color: green;
+}
+
+.r {
+    color: red;
+}
