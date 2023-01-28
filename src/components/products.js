@@ -3,12 +3,17 @@ import "./products.css"
 
 
 export default function Products({ setData, data, productCat }) {
+    let catArr = [];
 
-
+    data.map(e => {
+        if (!catArr.includes(e.category)) {
+            catArr.push(e.category)
+        }
+    })
 
     return (
         <div id='productContainer'>
-            {productCat.map(e => {
+            {catArr.map(e => {
                 return (
                     <div id='productContainer'>
                         <div className='productCatHeader'>{e}</div>
